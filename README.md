@@ -9,7 +9,7 @@
 
 **Key Rotation Note:** New signature keys effective Sep 16, 2026. Legacy keys are no longer active on this profile. Commits signed before that date may appear Unverified as a result of the rotation.
 
-A local, agentic code editor compatible with any OpenAI-compatible local LLM provider ([llama.cpp](https://github.com/ggerganov/llama.cpp), [Ollama](https://ollama.com), [LM Studio](https://lmstudio.ai)). Supports Point it at any directory, give it a prompt, and it reads your codebase, plans changes, shows you a diff, and applies them.
+A local, agentic code editor compatible with any OpenAI-compatible local LLM provider ([llama.cpp](https://github.com/ggerganov/llama.cpp), [Ollama](https://ollama.com), [LM Studio](https://lmstudio.ai)). Point it at any directory, give it a prompt, and it reads your codebase, plans changes, shows you a diff, and applies them.
 
 No cloud. No Docker. No API keys.
 
@@ -47,7 +47,7 @@ confirm → apply        ← writes files to disk, optional git commit
 
 - Python 3.14+ (relies on `pathlib.Path.walk`)
 - A local LLM server (llama.cpp, Ollama, or LM Studio)
-- A GGUF model (see [recommended models](#recommended-models))
+- A GGUF model
 
 ## Downloads
 
@@ -258,19 +258,6 @@ Run the tests:
 python3 -m pytest tests/
 python3 main.py
 ```
-
-## Recommended models
-
-These models are optimized for the agentic workflows, long context, and structured JSON output required by WePairCode.
-
-| Model             | Size            | Context | Notes                                                                                     |
-| :---------------- | :-------------- | :------ | :---------------------------------------------------------------------------------------- |
-| `qwen3-coder-30b` | 30B (3B active) | 256K    | **Best overall for coding.** State-of-the-art MoE with 128 experts for agentic tool use.  |
-| `qwen3.6-plus`    | (Varies)        | 1M      | Specialized **reasoning** model built for step-by-step execution and long-form workflows. |
-| `gemma-4-26b-a4b` | 26B (4B active) | 256K    | Extreme MoE efficiency; delivers 27B-class intelligence at 4B compute cost.               |
-| `gemma-4-e4b`     | 4B              | 128K    | Fast, mobile-first model with native multimodal (audio/vision) capabilities.              |
-
----
 
 ### Key Updates for 2026 Models:
 
